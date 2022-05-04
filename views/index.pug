@@ -1,7 +1,10 @@
 extends layout.pug
 
 block content
-  h1 My favourite animal is #{name}
+  form(name="profile")
+    input(type="text", id="name")
+    input(type="password", id="password")
+    input(type="submit" id="submit")
   
 
   

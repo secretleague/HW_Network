@@ -1,27 +1,20 @@
-const pug = require('pug');
 const express = require('express');
-const app = express();
-const port = 8080;
 const path = require('path');
-const bodyParser = require('body-parser');
+const app = express();
+const public = path.join(__dirname, 'public');
 
-app.use(express.static(path.join(__dirname, './public')));
-app.use(bodyParser.urlencoded({ extended: true }));
+const port = 3000;
+const host = 'localhost';
+
+app.use(express.static(public));
+
+app.set('views', './views');
+app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-  const compiledFunction = pug.compileFile('./views/index.pug');
-  
-  res.send(compiledFunction({
-    name: 'Porosenok'
-  }));
+	res.render('index');
 });
 
-app.post('/submit', (req, res) => {
-  const compiledFunction = pug.compileFile('./views/index.pug');
-
-  res.send(compiledFunction({
-    name: JSON.stringify(req.body)
-  }));
-})
-
-app.listen(port, () => console.log(`App listening on port ${port}!`));
+app.listen(port, host, () => {
+	console.log(`Server started at ${host} port ${port}`);
+});
