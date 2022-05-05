@@ -1,3 +1,28 @@
 h1 {
   color: green;
 }
+
+input[type="submit"] {
+  background: red;
+}
+
+#profile {
+  display: flex;
+  flex-flow: column;
+  width: 250px
+}
+
+label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100px;
+}
+
+label input {
+  margin-left: 15px;
+}
