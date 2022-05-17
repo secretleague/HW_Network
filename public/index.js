@@ -4,7 +4,8 @@
   function getName() {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-      if (xhr.readyState == XMLHttpRequest.DONE) {
+      if (xhr.readyState == XMLHttpRequest.DONE ) {
+        console.log(xhr);
         $result.textContent = xhr.responseText;
       }
     }
@@ -20,7 +21,8 @@
 
     xhr.onreadystatechange = function() {
       if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        $result.textContent = xhr.responseText;
+        // $result.textContent = xhr.responseText;
+
       }
     }
     xhr.send(JSON.stringify(data));
@@ -40,7 +42,7 @@
   
 
   document.addEventListener('DOMContentLoaded', () => {
-    $form = document.getElementById('profile');
+    $form = document.forms.profile//querySelector('#profile');
     $result = document.querySelector('.result');
     getName();
     
@@ -48,9 +50,11 @@
     $form.addEventListener('submit', (e) => {
       e.preventDefault();
       setName(prepareData());
+      
     });
   });
 })();
+
 
 
 // замыкание

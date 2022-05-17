@@ -9,12 +9,12 @@ input[type="submit"] {
 #profile {
   display: flex;
   flex-flow: column;
-  width: 250px
+  width: 185px
 }
 
 label {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   margin-bottom: 15px;
 }
@@ -26,3 +26,4 @@ input {
 label input {
   margin-left: 15px;
 }
+
