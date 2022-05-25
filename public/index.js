@@ -1,33 +1,35 @@
-(function() {
+(function() { // для чего эта функция?
   let $form, $result;
 
   function getName() {
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState == XMLHttpRequest.DONE ) {
-        console.log(xhr);
-        $result.textContent = xhr.responseText;
-      }
-    }
-    xhr.open('GET', '/api/name', true);
-    xhr.send(null);
-  }
+    fetch('/api/name')
+     .then((response)=> {
+       console.log(response);
+       return response.json(); // Почему тут без ретерна не работает???
+    } )
 
-  function setName(data) {
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", '/api/name', true);
-    xhr.setRequestHeader("Content-Type", "application/json");
+     .then((data) => {
+       console.log(data);
+       $result.textContent = JSON.stringify(data);//Почему тут можно без return?
+     })
+   };
 
 
-    xhr.onreadystatechange = function() {
-      if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-        // $result.textContent = xhr.responseText;
-
-      }
-    }
-    xhr.send(JSON.stringify(data));
-  }
-
+  
+  
+  async function setName (data) {
+    
+      const response = await fetch('/api/name', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      });
+      return await response.json;
+   };
+   
+  
   function prepareData() {
     let data = {};
     let formData = new FormData($form);
@@ -40,6 +42,7 @@
     return data;
   }
   
+  
 
   document.addEventListener('DOMContentLoaded', () => {
     $form = document.forms.profile//querySelector('#profile');
@@ -50,6 +53,8 @@
     $form.addEventListener('submit', (e) => {
       e.preventDefault();
       setName(prepareData());
+      getName(prepareData());
+      
       
     });
   });
