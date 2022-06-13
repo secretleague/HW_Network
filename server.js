@@ -57,4 +57,6 @@ app.listen(port, host, () => {
 	console.log(`Server started at ${host} port ${port}`);
 });
 
+console.log(this);
+
 

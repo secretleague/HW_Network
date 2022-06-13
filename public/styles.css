@@ -27,3 +27,36 @@ label input {
   margin-left: 15px;
 }
 
+
+.button {
+  margin-top: 10px;
+  background-color: aqua;
+  
+}
+
+.button2 {
+  background-color: blueviolet;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.message{
+  background-color: crimson;
+  text-align: center;
+  border: 1px solid black;
+  width: 200px;
+  display: none;
+  margin-top: 10px;
+}
+
+.message2{
+  background-color: crimson;
+  text-align: center;
+  border: 1px solid black;
+  width: 200px;
+  display: inline-flex;
+  margin-top: 10px;
+}
+
