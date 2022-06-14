@@ -1,4 +1,4 @@
-
+require("./styles.css") ;//Подключаем сюда стили, пересобираем index.js, стили длжны быть в папке src
 
   let $form, $result;
   let serverData = {};

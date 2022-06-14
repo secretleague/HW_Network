@@ -2,12 +2,13 @@ html
   head
     title
       | My Site - #{name}
-    link(rel='stylesheet' type='text/css' href='styles.css');
-    //- //script(src='/index.js')  При использовании сбощика надо выпилить все скрипты
-    
+    //- link(rel='stylesheet' type='text/css' href='styles.css');
+    //- script(src='/index.js') 
+    style 
+    script(src='/bundle.js')
   body(class='body')
     block content
 
-    script(src='/bundle.js')
+    
     
   

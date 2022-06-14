@@ -1,3 +1,4 @@
+
 const path = require('path');
 
 module.exports = {
@@ -7,4 +8,15 @@ module.exports = {
         filename: 'bundle.js'
     },
     mode: 'production',
+    module: {
+        rules: [
+            {
+              test: /\.css$/i,
+              use: ["style-loader", "css-loader"],
+            },
+          
+        ]
+      },
+
+   
 }
