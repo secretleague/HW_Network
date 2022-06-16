@@ -1,0 +1,62 @@
+h1 {
+  color: green;
+}
+
+input[type="submit"] {
+  background: rgb(171, 230, 94);
+}
+
+#profile {
+  display: flex;
+  flex-flow: column;
+  width: 185px
+}
+
+label {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100px;
+}
+
+label input {
+  margin-left: 15px;
+}
+
+
+.button {
+  margin-top: 10px;
+  background-color: aqua;
+  
+}
+
+.button2 {
+  background-color: blueviolet;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+.message{
+  background-color: crimson;
+  text-align: center;
+  border: 1px solid black;
+  width: 200px;
+  display: none;
+  margin-top: 10px;
+}
+
+.message2{
+  background-color: crimson;
+  text-align: center;
+  border: 1px solid black;
+  width: 200px;
+  display: inline-flex;
+  margin-top: 10px;
+}
+

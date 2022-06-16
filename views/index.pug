@@ -2,13 +2,37 @@ extends layout.pug
 
 block content
   form(name="profile" id="profile")
+    
     label Name
       input(type="text" id="name" name="name")
+      
+    label e-Mail: 
+      input(type="text" id="eMail" name="eMail")  
     label Password
       input(type="password" id="password" name="password")
+    label What is your favorite season? 
+    label Winter:
+      input(type="checkbox" name="season1" value="winter") 
+    label Spring:
+      input(type="checkbox" name="season2" value="spring")
+    label Summer:
+      input(type="checkbox" name="season3" value="summer")
+    label Autumn:
+      input(type="checkbox" name="season4" value="autumn")
+  
     input(type="submit" id="submit")
+    div(class='message') Некорректно заполнена форма
 
   div(class="result")
+  button(class="button") Кнопка
+  
+  
+
+
+  
+  
+       
+  
   
 
   
